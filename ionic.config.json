@@ -1,0 +1,7 @@
+{
+  "name": "EDUCOMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

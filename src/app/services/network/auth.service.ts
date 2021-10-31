@@ -19,7 +19,7 @@ export class AuthService {
       )
       .subscribe(this.loggedUser);
   }
-  getUserFromToken(token: string): Observable<User>{
+  getUserFromToken = (token: string): Observable<User> => {
     const headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
       .set('Authorization', `Bearer ${token}`);
@@ -35,5 +35,5 @@ export class AuthService {
           response['avatar']
         ))
       );
-  }
+  };
 }

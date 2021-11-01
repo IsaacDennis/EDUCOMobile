@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CommunitiesPageRoutingModule } from './communities-routing.module';
 
 import { CommunitiesPage } from './communities.page';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { CommunitiesPage } from './communities.page';
     IonicModule,
     CommunitiesPageRoutingModule
   ],
-  declarations: [CommunitiesPage]
+  declarations: [CommunitiesPage, HeaderComponent]
 })
 export class CommunitiesPageModule {}

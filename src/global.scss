@@ -24,3 +24,19 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Font faces */
+@font-face {
+  font-family: "Fira Sans";
+  src: url("assets/fonts/FiraSans-Regular.ttf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fira Sans";
+  src: url("assets/fonts/FiraSans-Bold.ttf");
+  font-style: normal;
+  font-weight: bold;
+}
+* {
+  font-family: "Fira Sans"
+}

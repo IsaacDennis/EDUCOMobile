@@ -1,0 +1,26 @@
+#logo {
+  width: 30%;
+  height: 15%;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+ion-label {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+}
+div {
+  width: 80%;
+}
+ion-button {
+  display: block;
+  --border-radius: 25px;
+  height: 50px;
+  margin-top: 10px;
+}

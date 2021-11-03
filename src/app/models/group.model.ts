@@ -1,8 +1,11 @@
 export class Group {
   constructor(
+    public id: number,
     public creator: string,
-    public imageId: number,
+    public createdAt: string,
     public description: string,
-    public name: string
+    public imageId: number,
+    public name: string,
+    public updatedAt: string
   ){}
 }

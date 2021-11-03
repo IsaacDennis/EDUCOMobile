@@ -20,7 +20,18 @@ export class GroupService {
     return this.http.post(this.participantsUrl, {userId, groupId});
   }
   getGroupsByUser(userId: string): Observable<Group[]>{
-    return this.http.get<Group[]>(this.baseUrl + `/${userId}`);
+    return this.http.get<any[]>(this.baseUrl + `/${userId}`)
+      .pipe(
+        map(responses => responses.map(response => new Group(
+          response['id'],
+          response['creator'],
+          response['created_at'],
+          response['description'],
+          response['imageId'],
+          response['nome'],
+          response['updated_at']
+        )))
+      );
   }
   getParticipants(groupId: number): Observable<User[]>{
     return this.http.get<any[]>(this.participantsUrl + `/${groupId}`)

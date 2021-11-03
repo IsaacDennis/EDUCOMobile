@@ -2,12 +2,22 @@
   <main>
     <img id="logo" src="assets/educo-logo.svg"/>
     <div>
-      <ion-label color="secondary">Estude</ion-label>
-      <ion-label color="secondary">{{studyTexts[currentIndex]}}</ion-label>
+      <ion-label color="secondary" class="study-label">Estude</ion-label>
+      <ion-label color="secondary" class="study-label">{{studyTexts[currentIndex]}}</ion-label>
     </div>
     <div>
-      <ion-button strong>Entre na sua conta</ion-button>
-      <ion-button strong>Registre-se</ion-button>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="email" (ionChange)="setEmail($event.target.value)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" (ionChange)="setPassword($event.target.value)"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-button strong (click)="startAuthentication()">Entrar</ion-button>
+      <ion-button strong (click)="presentRegister()">Registre-se</ion-button>
     </div>
   </main>
 </ion-content>

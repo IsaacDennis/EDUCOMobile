@@ -17,7 +17,7 @@ export class AuthService {
       .pipe(
         mergeMap(this.getUserFromToken)
       )
-      .subscribe(this.loggedUser);
+      .subscribe(user => this.loggedUser.next(user));
   }
   getUserFromToken = (token: string): Observable<User> => {
     const headers = new HttpHeaders()

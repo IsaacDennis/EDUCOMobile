@@ -31,8 +31,8 @@ export class LoginModalPage implements OnInit {
     }, 3000);
     this.auth.loggedUser.subscribe(user => {
       if (user){
-        this.loadingController.dismiss();
         this.modalController.dismiss();
+        this.loadingController.dismiss();
       }
     });
   }
@@ -49,8 +49,6 @@ export class LoginModalPage implements OnInit {
     }
     this.presentLoading();
     this.auth.authenticateUser(this.email, this.password);
-    this.auth.loggedUser.subscribe(console.log);
-
   }
   async presentRegister(){
     const modal = await this.modalController.create({

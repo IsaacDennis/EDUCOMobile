@@ -3,4 +3,21 @@
     <img id="logo" src="assets/educo-logo.svg" width="20%" slot="start"/>
     <ion-searchbar [placeholder]="searchName" slot="end"></ion-searchbar>
   </ion-toolbar>
+  <ion-toolbar *ngIf="communitiesTab">
+    <div id="communities-row" slot="start">
+      <ion-segment [value]="communities[0]?.id" scrollable (ionChange)="setCurrentGroup($event.detail.value)">
+        <ion-segment-button *ngFor="let community of communities" [value]="community.id">
+          <ion-avatar>
+            <img src="assets/mock-group.jpeg"/>
+          </ion-avatar>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div id="actions-row" slot="end">
+      <ion-button>Ver tudo</ion-button>
+      <ion-button>
+        <ion-icon name="add" size="large"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
 </ion-header>

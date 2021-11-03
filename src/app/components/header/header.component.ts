@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Group } from 'src/app/models/group.model';
+import { AuthService } from 'src/app/services/network/auth.service';
+import { GroupService } from 'src/app/services/network/group.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +11,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() searchName: string;
-  constructor() { }
+  @Input() communitiesTab: boolean;
+  communities: Group[] = [];
+  constructor(
+    private auth: AuthService,
+    private groupService: GroupService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.auth.loggedUser.subscribe(user => {
+      if (user && this.communitiesTab){
+        this.groupService
+          .getGroupsByUser(user.id)
+          .subscribe(communities => this.communities = communities);
+      }
+    });
+  }
+  setCurrentGroup(groupId: string){
+    console.log(groupId);
+  }
 
 }

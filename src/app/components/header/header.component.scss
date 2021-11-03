@@ -6,3 +6,12 @@
 ion-searchbar {
   --border-radius: 30px;
 }
+#communities-row {
+  max-width: 50%;
+  border-right: 2px;
+  border-right-style: solid;
+  border-right-color: black;
+  ion-avatar {
+    margin: 5px;
+  }
+}

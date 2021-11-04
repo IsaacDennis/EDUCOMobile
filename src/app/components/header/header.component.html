@@ -22,5 +22,16 @@
   </ion-toolbar>
   <ion-toolbar *ngIf="communitiesTab" color="primary">
     <ion-label id="group-label" slot="start">{{currentGroup?.name}}</ion-label>
+    <ion-segment value="posts" slot="end" scrollable>
+      <ion-segment-button value="posts">
+        <ion-icon name="list"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="participants">
+        <ion-icon name="people"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="settings">
+        <ion-icon name="settings"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>

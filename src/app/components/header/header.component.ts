@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   @Input() communitiesTab: boolean;
   @Output() groupChange: EventEmitter<Group> = new EventEmitter();
   communities: Group[] = [];
+  currentGroup: Group;
   constructor(
     private auth: AuthService,
     private groupService: GroupService
@@ -24,12 +25,16 @@ export class HeaderComponent implements OnInit {
       if (user && this.communitiesTab){
         this.groupService
           .getGroupsByUser(user.id)
-          .subscribe(communities => this.communities = communities);
+          .subscribe(communities => {
+            this.communities = communities;
+            this.currentGroup = communities[0];
+          });
       }
     });
   }
   setCurrentGroup(groupId: string){
     const selectedGroup = this.communities.find(group => group.id === +groupId);
+    this.currentGroup = selectedGroup;
     this.groupChange.emit(selectedGroup);
   }
 

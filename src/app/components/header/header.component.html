@@ -20,4 +20,7 @@
       </ion-button>
     </div>
   </ion-toolbar>
+  <ion-toolbar *ngIf="communitiesTab" color="primary">
+    <ion-label id="group-label" slot="start">{{currentGroup?.name}}</ion-label>
+  </ion-toolbar>
 </ion-header>

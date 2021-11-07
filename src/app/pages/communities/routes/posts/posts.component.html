@@ -1,0 +1,9 @@
+<ion-list *ngIf="(posts | async) as posts; else loading">
+  <app-post-card *ngFor="let post of posts" [post]="post">
+  </app-post-card>
+</ion-list>
+<ng-template #loading>
+  <div id="loading-div">
+    <ion-progress-bar type="indeterminate" color="secondary"></ion-progress-bar>
+  </div>
+</ng-template>

@@ -8,6 +8,9 @@ import { CommunitiesPageRoutingModule } from './communities-routing.module';
 
 import { CommunitiesPage } from './communities.page';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { PostCardComponent } from 'src/app/components/post-card/post-card.component';
+import { PostsComponent } from './routes/posts/posts.component';
+import { ParticipantsComponent } from './routes/participants/participants.component';
 
 @NgModule({
   imports: [
@@ -16,6 +19,6 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
     IonicModule,
     CommunitiesPageRoutingModule
   ],
-  declarations: [CommunitiesPage, HeaderComponent]
+  declarations: [CommunitiesPage, HeaderComponent, PostCardComponent, PostsComponent, ParticipantsComponent]
 })
 export class CommunitiesPageModule {}

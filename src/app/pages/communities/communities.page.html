@@ -1,4 +1,5 @@
-<app-header searchName="Comunidades" [communitiesTab]="true" (groupChange)="onGroupChange($event)"></app-header>
+<app-header searchName="Comunidades" [communitiesTab]="true" (communityRouteChange)="onCommunityRouteChange($event)"></app-header>
 <ion-content>
-
+  <ion-router-outlet>
+  </ion-router-outlet>
 </ion-content>

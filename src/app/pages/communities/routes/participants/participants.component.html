@@ -1,0 +1,13 @@
+<ion-list *ngIf="(participants | async) as participants; else loading">
+  <ion-item *ngFor="let participant of participants" detail button>
+    <ion-avatar>
+      <img src="assets/mock-person.png"/>
+    </ion-avatar>
+    <ion-label color="secondary">{{participant.name}}</ion-label>
+  </ion-item>
+</ion-list>
+<ng-template #loading>
+  <div id="loading-div">
+    <ion-progress-bar type="indeterminate" color="secondary"></ion-progress-bar>
+  </div>
+</ng-template>

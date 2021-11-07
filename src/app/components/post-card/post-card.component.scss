@@ -1,0 +1,23 @@
+#indicator-row {
+  display: flex;
+  ion-icon {
+    font-size: 24px;
+    color: #0ea9c8;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+  }
+}
+#author-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  ion-avatar {
+    margin-left: 2.5px;
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -31,8 +31,9 @@ export class LoginModalPage implements OnInit {
     }, 3000);
     this.auth.loggedUser.subscribe(user => {
       if (user){
-        this.modalController.dismiss();
-        this.loadingController.dismiss();
+        this.loadingController
+          .dismiss()
+          .then(() => this.modalController.dismiss());
       }
     });
   }
@@ -42,12 +43,12 @@ export class LoginModalPage implements OnInit {
   setPassword(value: string){
     this.password = value;
   }
-  startAuthentication(){
+  async startAuthentication(){
     if (!this.email || !this.password){
       this.presentWarning('Preencha todos os campos.');
       return;
     }
-    this.presentLoading();
+    await this.presentLoading();
     this.auth.authenticateUser(this.email, this.password);
   }
   async presentRegister(){

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Group } from 'src/app/models/group.model';
 import { AuthService } from 'src/app/services/network/auth.service';
@@ -12,12 +13,13 @@ import { GroupService } from 'src/app/services/network/group.service';
 export class HeaderComponent implements OnInit {
   @Input() searchName: string;
   @Input() communitiesTab: boolean;
-  @Output() groupChange: EventEmitter<Group> = new EventEmitter();
   communities: Group[] = [];
   currentGroup: Group;
+  currentRouterLink: string;
   constructor(
     private auth: AuthService,
-    private groupService: GroupService
+    private groupService: GroupService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -35,7 +37,12 @@ export class HeaderComponent implements OnInit {
   setCurrentGroup(groupId: string){
     const selectedGroup = this.communities.find(group => group.id === +groupId);
     this.currentGroup = selectedGroup;
-    this.groupChange.emit(selectedGroup);
+    this.changeCommunityRoute('posts');
+  }
+  changeCommunityRoute(routerLink: string){
+    this.currentRouterLink = routerLink;
+    const groupId = this.currentGroup.id;
+    this.router.navigateByUrl(`/communities/${routerLink}/${groupId}`);
   }
 
 }

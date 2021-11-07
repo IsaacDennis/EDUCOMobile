@@ -13,14 +13,10 @@ import { UserService } from 'src/app/services/network/user.service';
 export class PostCardComponent implements OnInit {
   @Input() post: Post;
   author: Observable<User>;
-  loading = true;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.author = this.userService.getUserById(this.post.userId)
-      .pipe(
-        finalize(() => this.loading = false)
-      );
+    this.author = this.userService.getUserById(this.post.userId);
   }
 
 }

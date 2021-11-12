@@ -1,7 +1,14 @@
-<ion-list *ngIf="(posts | async) as posts; else loading">
-  <app-post-card *ngFor="let post of posts" [post]="post">
-  </app-post-card>
-</ion-list>
+<div id="content" *ngIf="(posts | async) as posts; else loading">
+  <ion-list>
+    <app-post-card *ngFor="let post of posts" [post]="post">
+    </app-post-card>
+  </ion-list>
+</div>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="presentCreatePostModal()">
+    <ion-icon name="add" size="large"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 <ng-template #loading>
   <div id="loading-div">
     <ion-progress-bar type="indeterminate" color="secondary"></ion-progress-bar>

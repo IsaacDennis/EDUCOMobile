@@ -4,7 +4,7 @@
     <ion-searchbar [placeholder]="searchName" slot="end"></ion-searchbar>
   </ion-toolbar>
   <ion-toolbar *ngIf="communitiesTab">
-    <div id="communities-row" slot="start">
+    <div id="communities-row">
       <ion-segment [value]="communities[0]?.id" scrollable (ionChange)="setCurrentGroup($event.detail.value)">
         <ion-segment-button *ngFor="let community of communities" [value]="community.id">
           <ion-avatar>
@@ -12,6 +12,11 @@
           </ion-avatar>
         </ion-segment-button>
       </ion-segment>
+      <ng-template #loading>
+        <div id="loading-div">
+          <ion-spinner></ion-spinner>
+        </div>
+      </ng-template>
     </div>
     <div id="actions-row" slot="end">
       <ion-button>Ver tudo</ion-button>

@@ -8,15 +8,25 @@ ion-searchbar {
 }
 #communities-row {
   max-width: 50%;
-  border-right: 2px;
-  border-right-style: solid;
-  border-right-color: black;
+  height: 100%;
+  
   ion-avatar {
     margin: 5px;
+  }
+  ion-segment {
+    border-right: 2px;
+    border-right-style: solid;
+    border-right-color: black;
   }
 }
 #group-label {
   margin-left: 10px;
   font-weight: bold;
   font-size: 1.25rem;
+}
+#loading-div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

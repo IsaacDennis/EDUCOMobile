@@ -1,7 +1,25 @@
 <app-header searchName="Últimas postagens"></app-header>
 
 <ion-content>
-  <div>
-    <p>Home</p>
+  <div *ngIf="(data | async) as data; else loading">
+    <ion-label id="latest-label" color="secondary">Últimas postagens</ion-label>
+    <ion-list>
+      <ion-card *ngFor="let entry of data | keyvalue" button>
+        <ion-card-title>
+          <ion-avatar>
+            <img src="assets/mock-group.jpeg"/>
+          </ion-avatar>
+          <ion-label color="secondary">{{entry.key.name}}</ion-label>
+        </ion-card-title>
+        <ion-card-content>
+          <app-post-card [post]="entry.value"></app-post-card>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
   </div>
+  <ng-template #loading>
+    <div id="loading-div">
+      <ion-progress-bar type="indeterminate" color="secondary"></ion-progress-bar>
+    </div>
+  </ng-template>
 </ion-content>

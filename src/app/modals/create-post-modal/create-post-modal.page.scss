@@ -1,0 +1,27 @@
+textarea {
+    border: solid 1px gray;
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
+#textarea-div {
+    width: 80%;
+    height: 90%;
+    margin-top: 20px;
+}
+.action-button {
+    display: block;
+    --border-radius: 25px;
+    height: 50px;
+    margin-top: 10px;
+}
+#content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#buttons-div {
+    width: 80%;
+    margin: 30px 0px 30px 0px;
+}

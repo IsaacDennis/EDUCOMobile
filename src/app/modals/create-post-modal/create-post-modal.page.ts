@@ -1,8 +1,9 @@
+/* eslint-disable id-blacklist */
 import { Component, Input, OnInit } from '@angular/core';
-import { Camera, CameraSource } from '@capacitor/camera';
+import { CameraSource } from '@capacitor/camera';
 import { ActionSheetController, AlertController, LoadingController, ModalController, ToastController } from '@ionic/angular';
 import { ImageService } from 'src/app/services/local/image.service';
-
+import { Clipboard } from '@capacitor/clipboard';
 @Component({
   selector: 'app-create-post-modal',
   templateUrl: './create-post-modal.page.html',
@@ -75,7 +76,7 @@ export class CreatePostModalPage implements OnInit {
         {
           text: 'Copiar tudo',
           handler: () => {
-
+            this.writeToClipboard(text);
           }
         },
         {
@@ -85,5 +86,10 @@ export class CreatePostModalPage implements OnInit {
       ]
     });
     await alert.present();
+  }
+  async writeToClipboard(text: string){
+    await Clipboard.write({
+      string: text,
+    });
   }
 }

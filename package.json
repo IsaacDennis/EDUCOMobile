@@ -28,6 +28,7 @@
     "@ionic/angular": "^5.5.2",
     "@ionic/pwa-elements": "^3.0.2",
     "rxjs": "~6.6.0",
+    "tesseract.js": "^2.1.5",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },

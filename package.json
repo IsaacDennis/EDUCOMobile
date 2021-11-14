@@ -21,6 +21,7 @@
     "@angular/router": "~12.1.1",
     "@capacitor/app": "1.0.5",
     "@capacitor/camera": "^1.2.0",
+    "@capacitor/clipboard": "^1.0.6",
     "@capacitor/core": "3.2.5",
     "@capacitor/haptics": "1.1.2",
     "@capacitor/keyboard": "1.1.2",

@@ -9,6 +9,7 @@ import { User } from 'src/app/models/user.model';
   providedIn: 'root'
 })
 export class AuthService {
+  authToken = '';
   loggedUser: BehaviorSubject<User> = new BehaviorSubject(null);
   baseUrl: string = external.serverUrl + '/sessions';
   constructor(private http: HttpClient) { }
@@ -20,6 +21,7 @@ export class AuthService {
       .subscribe(user => this.loggedUser.next(user));
   }
   getUserFromToken = (token: string): Observable<User> => {
+    this.authToken = token;
     const headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
       .set('Authorization', `Bearer ${token}`);

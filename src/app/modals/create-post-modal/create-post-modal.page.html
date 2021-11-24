@@ -11,14 +11,14 @@
 <ion-content>
   <div id="content">
     <div id="textarea-div">
-      <textarea autofocus autoGrow placeholder="Digite o conteúdo do post"></textarea>
+      <textarea [(ngModel)]="text" placeholder="Digite o conteúdo do post"></textarea>
     </div>
     <div id="buttons-div" width="100%">
       <ion-button class="action-button" strong (click)="presentImageSheet()">
         <ion-label slot="start">Fotografar</ion-label>
         <ion-icon slot="end" name="camera"></ion-icon>
       </ion-button>
-      <ion-button class="action-button" strong>Enviar post</ion-button>
+      <ion-button class="action-button" strong (click)="submitPost()">Enviar post</ion-button>
     </div>
   </div>  
 </ion-content>

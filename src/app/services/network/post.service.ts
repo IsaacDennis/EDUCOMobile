@@ -11,8 +11,19 @@ import { Post } from 'src/app/models/post.model';
 export class PostService {
   baseUrl: string = external.serverUrl + '/posts';
   constructor(private http: HttpClient) { }
-  createPost(postData: Post): Observable<Post>{
-    return this.http.post<Post>(this.baseUrl, postData);
+  createPost(postData: any): Observable<Post>{
+    return this.http.post<any>(this.baseUrl, postData)
+      .pipe(
+        map(response => new Post(
+          response['id'],
+          response['userId'],
+          response['groupId'],
+          response['text'],
+          response['created_at'],
+          response['updated_at'],
+          response['imageId']
+        ))
+      );
   }
   deletePost(postId: number): Observable<any>{
     return this.http.delete(this.baseUrl + `/${postId}`);

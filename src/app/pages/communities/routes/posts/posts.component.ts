@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { Console } from 'console';
 import { Observable } from 'rxjs';
+import { repeat } from 'rxjs/operators';
 import { CreatePostModalPage } from 'src/app/modals/create-post-modal/create-post-modal.page';
 import { Post } from 'src/app/models/post.model';
 import { PostService } from 'src/app/services/network/post.service';
@@ -32,7 +34,11 @@ export class PostsComponent implements OnInit {
       component: CreatePostModalPage,
       componentProps: { groupId: this.groupId }
     });
-    return await modal.present();
+    await modal.present();
+    const { data: { postSubmitted } } = await modal.onWillDismiss();
+    if (postSubmitted) {
+      this.posts = this.posts.pipe(repeat(1));
+    }
   }
 
 }

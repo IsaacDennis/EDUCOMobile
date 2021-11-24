@@ -29,7 +29,8 @@ export class GroupService {
           response['description'],
           response['imageId'],
           response['nome'],
-          response['updated_at']
+          response['updated_at'],
+          response['imageUrl']
         )))
       );
   }

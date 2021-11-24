@@ -6,6 +6,7 @@ export class Group {
     public description: string,
     public imageId: number,
     public name: string,
-    public updatedAt: string
+    public updatedAt: string,
+    public imageUrl?: string,
   ){}
 }

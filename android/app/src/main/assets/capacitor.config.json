@@ -1,0 +1,6 @@
+{
+	"appId": "com.educo.mobile",
+	"appName": "EDUCOMobile",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -11,6 +11,7 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
 import { PostCardComponent } from 'src/app/components/post-card/post-card.component';
 import { PostsComponent } from './routes/posts/posts.component';
 import { ParticipantsComponent } from './routes/participants/participants.component';
+import { SettingsComponent } from './routes/settings/settings.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,13 @@ import { ParticipantsComponent } from './routes/participants/participants.compon
     IonicModule,
     CommunitiesPageRoutingModule
   ],
-  declarations: [CommunitiesPage, HeaderComponent, PostCardComponent, PostsComponent, ParticipantsComponent]
+  declarations: [
+    CommunitiesPage,
+    HeaderComponent,
+    PostCardComponent,
+    PostsComponent,
+    ParticipantsComponent,
+    SettingsComponent
+  ]
 })
 export class CommunitiesPageModule {}

@@ -1,7 +1,7 @@
 <app-header searchName="Últimas postagens"></app-header>
 
 <ion-content>
-  <div *ngIf="(data | async) as data; else loading">
+  <div id="content" *ngIf="(data | async) as data; else loading">
     <ion-label id="latest-label" color="secondary">Últimas postagens</ion-label>
     <ion-list>
       <ion-card *ngFor="let entry of data | keyvalue" button>

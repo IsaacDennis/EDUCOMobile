@@ -6,6 +6,6 @@ export class User {
     public createdAt: string,
     public updatedAt: string,
     public bio?: string,
-    public avatar?: number
+    public imageUrl?: string
   ){}
 }

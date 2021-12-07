@@ -5,10 +5,10 @@
   </ion-toolbar>
   <ion-toolbar *ngIf="communitiesTab">
     <div id="communities-row">
-      <ion-segment [value]="communities[0]?.id" scrollable (ionChange)="setCurrentGroup($event.detail.value)">
-        <ion-segment-button *ngFor="let community of communities" [value]="community.id">
+      <ion-segment [(ngModel)]="currentGroupId" scrollable (ionChange)="setCurrentGroup($event.detail.value)">
+        <ion-segment-button *ngFor="let community of (communities | async)" [value]="community.id">
           <ion-avatar>
-            <img src="assets/mock-group.jpeg"/>
+            <img [src]="community.imageUrl"/>
           </ion-avatar>
         </ion-segment-button>
       </ion-segment>
@@ -19,11 +19,11 @@
       </ng-template>
     </div>
     <div id="actions-row" slot="end">
-      <ion-button>Ver tudo</ion-button>
+      <ion-button (click)="presentGroupsModal()">Ver tudo</ion-button>
     </div>
   </ion-toolbar>
   <ion-toolbar *ngIf="communitiesTab" color="primary">
-    <ion-label id="group-label" slot="start">{{currentGroup?.name}}</ion-label>
+    <ion-label id="group-label" slot="start">{{(currentGroup | async)?.name}}</ion-label>
     <ion-segment [(ngModel)]="currentRouterLink" slot="end" scrollable (ionChange)="changeCommunityRoute($event.detail.value)">
       <ion-segment-button value="posts">
         <ion-icon name="list"></ion-icon>

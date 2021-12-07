@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'create-post-modal',
     loadChildren: () => import('./modals/create-post-modal/create-post-modal.module').then( m => m.CreatePostModalPageModule)
   },
+  {
+    path: 'groups-modal',
+    loadChildren: () => import('./modals/groups-modal/groups-modal.module').then( m => m.GroupsModalPageModule)
+  },
 ];
 
 @NgModule({

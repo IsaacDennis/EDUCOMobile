@@ -1,0 +1,23 @@
+ion-avatar {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+#content {
+    height: 100%;
+    overflow-y: scroll;
+}
+ion-list{
+    width: 100%;
+    height: 100%;
+}
+#avatar-div {
+    display: flex;
+    justify-content: center;
+    min-height: 250px;
+}
+.info-text {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}

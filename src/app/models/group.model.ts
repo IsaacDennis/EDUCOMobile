@@ -7,6 +7,7 @@ export class Group {
     public imageId: number,
     public name: string,
     public updatedAt: string,
+    public isPrivate: boolean,
     public imageUrl?: string,
   ){}
 }

@@ -1,5 +1,27 @@
 <app-header searchName="Configurações"></app-header>
 
 <ion-content>
-
+    <div id="content" *ngIf="(user | async) as user">
+        <ion-list>
+            <ion-list-header>
+                <ion-icon name="person" size="large"></ion-icon>
+                <ion-label>Perfil</ion-label>
+            </ion-list-header>
+            <div id="avatar-div">
+                <ion-avatar id="user-avatar" (click)="changeUserAvatar()">
+                    <img [src]="user.imageUrl"/>
+                </ion-avatar>
+            </div>
+            <ion-item>
+                <ion-label class="info-text">
+                    {{user.name}}
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <p slot="start" class="info-text">
+                    {{user.bio}}
+                </p>
+            </ion-item>
+        </ion-list>
+    </div>
 </ion-content>

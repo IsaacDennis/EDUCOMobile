@@ -2,7 +2,7 @@
   <ion-card button *ngIf="(author | async) as author; else loading">
     <ion-card-content>
       <ion-grid>
-        <ion-row>
+        <ion-row id="text-row">
           <ion-col>
             {{ post.text }}
           </ion-col>
@@ -12,11 +12,11 @@
             <div id="indicator-row">
               <div>
                 <ion-icon name="heart"></ion-icon>
-                <p>5</p>
+                <p>0</p>
               </div>
               <div>
                 <ion-icon name="chatbox-ellipses"></ion-icon>
-                <p>5</p>
+                <p>0</p>
               </div>
             </div>
           </ion-col>
@@ -24,7 +24,7 @@
             <div id="author-row">
               <p> {{ author.name }} </p>
               <ion-avatar>
-                <img src="assets/mock-person.png"/>
+                <img [src]="author.imageUrl"/>
               </ion-avatar>
             </div>
           </ion-col>

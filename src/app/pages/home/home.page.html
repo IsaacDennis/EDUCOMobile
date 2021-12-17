@@ -7,7 +7,7 @@
       <ion-card *ngFor="let entry of data | keyvalue" button>
         <ion-card-title>
           <ion-avatar>
-            <img src="assets/mock-group.jpeg"/>
+            <img [src]="entry.key.imageUrl"/>
           </ion-avatar>
           <ion-label color="secondary">{{entry.key.name}}</ion-label>
         </ion-card-title>

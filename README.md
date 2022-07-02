@@ -6,7 +6,7 @@ Aplicativo mobile do projeto **EDUCO**, plataforma educacional on-line orientada
 ## Instruções
 1. Obtenha e configure o servidor do projeto EDUCO [deste repositório](https://github.com/yDanonin/API_educo).
 2. Introduza no arquivo "external.config.json" a URL base do servidor configurado no passo acima.
-## [Screenshots]()
+## [Screenshots](https://isaacdennis.github.io/projects/creations/educomobile/#screenshots)
 ## Participantes do projeto
 - [Isaac Dennis Sombra Moreira Alves](https://www.linkedin.com/in/isaac-dennis-sombra-5b450b223/) (Desenvolvimento do aplicativo mobile)
 - [Caio Vitor Urbano Neves](https://www.linkedin.com/in/caio-vitor-260a231a7/) (Desenvolvimento do website - [disponível neste link](https://github.com/GitHubWithCjcnch/educo-project))

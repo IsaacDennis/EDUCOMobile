@@ -6,7 +6,7 @@ Mobile application of the **EDUCO** project, an online educational platform orie
 ## Instructions
 1. Get and configure the EDUCO project server [from this repository](https://github.com/yDanonin/API_educo).
 2. Enter the base URL of the server configured in the step above in the "external.config.json" file.
-## [Screenshots](https://isaacdennis.github.io/projects/creations/educomobile/#screenshots)
+## [Screenshots](https://isaacdennis.github.io/projects/educo.html#screenshots)
 ## Project members
 - [Isaac Dennis Sombra Moreira Alves](https://www.linkedin.com/in/isaac-dennis-sombra-5b450b223/) (Mobile app development)
 - [Caio Vitor Urbano Neves](https://www.linkedin.com/in/caio-vitor-260a231a7/) (Website development - [available at this link](https://github.com/GitHubWithCjcnch/educo- project))
